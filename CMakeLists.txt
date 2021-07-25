@@ -1,5 +1,9 @@
 cmake_minimum_required (VERSION 3.19.6)
 
+if (TARGET phake)
+	return()
+endif()
+
 add_custom_target (phake)
 
 
