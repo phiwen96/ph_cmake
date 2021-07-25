@@ -1,11 +1,10 @@
 cmake_minimum_required (VERSION 3.19.6)
 
-if (TARGET ph::cmake)
+if (TARGET ph_cmake)
 	return()
 endif()
 
 add_custom_target (ph_cmake)
-add_library (ph::cmake ALIAS ph_cmake)
 
 
 
