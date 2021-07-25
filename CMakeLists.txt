@@ -9,6 +9,7 @@ add_library (ph::cmake ALIAS ph_cmake)
 
 
 
+
 macro(lol)
 	# processor
 	set (_x86_64 "false")
