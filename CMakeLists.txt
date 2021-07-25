@@ -8,6 +8,7 @@ add_custom_target (ph_cmake)
 add_library (ph::cmake ALIAS ph_cmake)
 
 
+
 macro(lol)
 	# processor
 	set (_x86_64 "false")
