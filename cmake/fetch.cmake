@@ -1,4 +1,4 @@
-macro (ph_fetch_git_repo )
+macro (ph_fetch_git_repos )
 	set (prefix ARG)
 	set (NoArg)
 	set (SingleArg USER VERSION)
