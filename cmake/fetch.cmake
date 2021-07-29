@@ -25,6 +25,7 @@ macro (ph_fetch )
 		if (NOT TARGET ${git_repo})
 
 			message ("Fetching git repo ${git_repo}")
+			
 			include (FetchContent)
 
 			FetchContent_Declare(
@@ -32,7 +33,7 @@ macro (ph_fetch )
 				GIT_REPOSITORY https://github.com/${ARG_USER}/${git_repo}.git
 				GIT_TAG        ${ARG_VERSION})
 
-			FetchContent_GetProperties (${target})
+			FetchContent_GetProperties (${git_repo})
 			
 			if (NOT ${git_repo}_POPULATED)
 				FetchContent_Populate (${git_repo})
