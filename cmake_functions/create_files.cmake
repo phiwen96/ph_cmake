@@ -9,6 +9,9 @@ macro (ph_create_files)
 
 	cmake_parse_arguments (${prefix} "${NoValues}" "${SingleValues}" "${MultiValues}" ${ARGN})
 
+
+	
+
 	foreach(arg IN LISTS noValues)
 		if(${${prefix}_${arg}})
 			message(" ${arg} enabled")
