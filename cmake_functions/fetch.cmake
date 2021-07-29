@@ -51,7 +51,6 @@ macro (ph_fetch_git_repos )
 			FetchContent_Declare(
 				${git_repo}
 				GIT_REPOSITORY https://github.com/${ARG_USER}/${git_repo}.git
-				GIT_TAG        ${ARG_VERSION})
 
 			FetchContent_GetProperties (${git_repo})
 			
