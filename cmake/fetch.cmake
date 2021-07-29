@@ -1,4 +1,4 @@
-macro (ph_fetch )
+macro (ph_fetch_git_repo )
 	set (prefix ARG)
 	set (NoArg)
 	set (SingleArg USER VERSION)
@@ -25,7 +25,7 @@ macro (ph_fetch )
 		if (NOT TARGET ${git_repo})
 
 			message ("Fetching git repo ${git_repo}")
-			
+
 			include (FetchContent)
 
 			FetchContent_Declare(
