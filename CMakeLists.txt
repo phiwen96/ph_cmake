@@ -35,5 +35,5 @@ endforeach ()
 
 
 Create_files (FILES "kuk" "fitta" TEXT "tjo")
-
+Create_cpp_files (FILES "kuk" "fitta" TEXT "tjo")
 
