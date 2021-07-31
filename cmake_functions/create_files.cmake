@@ -1,4 +1,5 @@
 macro (Create_files)
+
 	set (prefix ARG)
 	set (NoValues DONT_ERASE_MODULE_IF_NOT_DEFINED)
 	set (SingleValues NAME TEXT)
@@ -18,7 +19,9 @@ macro (Create_files)
 
 
 	foreach (file IN LISTS ARG_FILES)
-		file (WRITE ${file} ${ARG_TEXT})	
+		if (NOT EXISTS ${file})
+			file (WRITE ${file} ${ARG_TEXT})
+		endif ()	
 	endforeach ()
 
 endmacro ()
