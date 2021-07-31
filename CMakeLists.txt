@@ -27,13 +27,7 @@ foreach (file ${cmake_functions})
     include (${file})
 endforeach ()
 
-# foreach (file IN LIST ${cmake_tests})
-#     include (${file})
-# 	message(${file})
-# 	message("hej")
-# endforeach ()
 
-
-Create_files (FILES "kuk" "fitta" TEXT "tjo")
-Create_cpp_files (FILES "kuk" "fitta" TEXT "tjo")
+# Create_cpp_files (FILES "kuk" "fitta" TEXT "tjo")
+# Create_cmake_files (FILES "kuk" "fitta" TEXT "tjo")
 

@@ -31,20 +31,10 @@ macro (Create_cmake_files)
 
 
 	foreach (filename IN LISTS ARG_FILES)
-
-		if (NOT EXISTS ${ARG_INCLUDE_DIR}/${filename})
-			message ("${ARG_INCLUDE_DIR}/${filename}")
-			file (WRITE "${ARG_INCLUDE_DIR}/${filename}" ${ARG_TEXT})
-
-			# file (WRITE "${ARG_INCLUDE_DIR}/${filename}" ${ARG_TEXT})
-		endif ()
-
-		if (NOT EXISTS ${ARG_SRC_DIR}/${filename})
-			message ("${ARG_SRC_DIR}/${filename}")
-
-			file (WRITE "${ARG_SRC_DIR}/${filename}" ${ARG_TEXT})
-		endif ()	
-
+		list (APPEND files "${filename}.cmake")
 	endforeach ()
+
+	Create_files (FILES ${files} TEXT ${ARG_TEXT})
+
 
 endmacro ()
