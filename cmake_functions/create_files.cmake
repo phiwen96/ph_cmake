@@ -1,42 +1,24 @@
-
-
-macro (ph_create_files)
-
+macro (Create_files)
 	set (prefix ARG)
 	set (NoValues DONT_ERASE_MODULE_IF_NOT_DEFINED)
-	set (SingleValues NAME DESTINATION)
-	set (MultiValues TESTS FILES)
+	set (SingleValues NAME TEXT)
+	set (MultiValues FILES)
 
 	cmake_parse_arguments (${prefix} "${NoValues}" "${SingleValues}" "${MultiValues}" ${ARGN})
 
-
 	
 
-	foreach(arg IN LISTS noValues)
-		if(${${prefix}_${arg}})
-			message(" ${arg} enabled")
-		else()
-			message(" ${arg} disabled")
-		endif()
-  	endforeach()
+	if (NOT ARG_FILES)
+		message (FATAL_ERROR "Please give us a FILE.")
+	endif ()
 
-	foreach(arg IN LISTS singleValues)
-  		message(" ${arg} = ${${prefix}_${arg}}")
-	endforeach()
+	if (NOT ARG_TEXT)
+		set (ARG_TEXT "")
+	endif ()
 
-	foreach (file IN LISTS ${prefix}_FILES)
-  		message(" ${arg} = ${${prefix}_${arg}}")
 
-		get_filename_component (name ${file} NAME_WE)
-			# message(${name})
-		list (FIND ARG_MODULES "${name}" _index)
-		if (${_index} GREATER -1)
-		else ()
-			message ("creating files")
-			file (WRITE "${header_file}" "#pragma once")
-		endif ()
+	foreach (file IN LISTS ARG_FILES)
+		file (WRITE ${file} ${ARG_TEXT})	
+	endforeach ()
 
-	endforeach()
 endmacro ()
-
-

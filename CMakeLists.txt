@@ -5,17 +5,17 @@ project (
 	VERSION 1.0.0
 	DESCRIPTION "Very nice project")
 
-if (TARGET ph_cmake)
-	return()
-endif()
+# if (TARGET ph_cmake)
+# 	return()
+# endif()
 
-add_custom_target (ph_cmake)
+# add_custom_target (ph_cmake)
 
 
 
 set (CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 
-include (FetchContent)
+# include (FetchContent)
 
 
 
@@ -32,5 +32,8 @@ endforeach ()
 # 	message(${file})
 # 	message("hej")
 # endforeach ()
+
+
+Create_files (FILES "kuk" "fitta" TEXT "tjo")
 
 

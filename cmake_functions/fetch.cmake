@@ -1,4 +1,4 @@
-macro (ph_fetch_git_repos )
+macro (ph_fetch_git_repos)
 	set (prefix ARG)
 	set (NoArg)
 	set (SingleArg USER VERSION)
@@ -50,7 +50,7 @@ macro (ph_fetch_git_repos )
 
 			FetchContent_Declare(
 				${git_repo}
-				GIT_REPOSITORY https://github.com/${ARG_USER}/${git_repo}.git
+				GIT_REPOSITORY https://github.com/${ARG_USER}/${git_repo}.git)
 
 			FetchContent_GetProperties (${git_repo})
 			
