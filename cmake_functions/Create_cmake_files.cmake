@@ -2,7 +2,7 @@ macro (Create_cmake_files)
 
 	set (prefix ARG)
 	set (NoValues)
-	set (SingleValues)
+	set (SingleValues DIR)
 	set (MultiValues FILES)
 
 	cmake_parse_arguments (${prefix} "${NoValues}" "${SingleValues}" "${MultiValues}" ${ARGN})
@@ -31,7 +31,13 @@ macro (Create_cmake_files)
 
 
 	foreach (filename IN LISTS ARG_FILES)
-		list (APPEND files "${filename}.cmake")
+
+		if (ARG_DIR)
+			list (APPEND files "${ARG_DIR}/${filename}.cmake")
+		else ()
+			list (APPEND files "${filename}.cmake")
+		endif ()
+
 	endforeach ()
 
 	Create_files (FILES ${files} TEXT ${ARG_TEXT})

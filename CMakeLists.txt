@@ -5,29 +5,26 @@ project (
 	VERSION 1.0.0
 	DESCRIPTION "Very nice project")
 
-# if (TARGET ph_cmake)
-# 	return()
-# endif()
-
-# add_custom_target (ph_cmake)
-
-
-
-set (CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
-
-# include (FetchContent)
-
-
+set (CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake_functions" ${CMAKE_MODULE_PATH})
 
 file (GLOB_RECURSE cmake_functions "cmake_functions/*.cmake")
 file (GLOB_RECURSE cmake_tests "cmake_tests/*.cmake")
-
 
 foreach (file ${cmake_functions})
     include (${file})
 endforeach ()
 
+Create_cmake_files (
 
-# Create_cpp_files (FILES "kuk" "fitta" TEXT "tjo")
-# Create_cmake_files (FILES "kuk" "fitta" TEXT "tjo")
+	FILES 
+		"Create_files"
+		"Create_cmake_files"
+		"Create_cmake_files"
+
+	DIR 
+		"cmake_functions"
+)
+
+
+
 
