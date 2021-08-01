@@ -1,13 +1,12 @@
-macro (Create_cpp_files)
+macro (Create_cpp_executables)
 
 	set (prefix ARG)
 	set (NoValues)
-	set (SingleValues INCLUDE_DIR SRC_DIR TEXT)
-	set (MultiValues FILES)
+	set (SingleValues INCLUDE_DIR SRC_DIR)
+	set (MultiValues TARGETS)
 
 	cmake_parse_arguments (${prefix} "${NoValues}" "${SingleValues}" "${MultiValues}" ${ARGN})
 
-	
 	
 	if (NOT ARG_INCLUDE_DIR)
 		set (ARG_INCLUDE_DIR "include")
@@ -30,11 +29,19 @@ macro (Create_cpp_files)
 		set (ARG_TEXT "")
 	endif ()
 
+	Create_files (DIR "/src" FILES ${ARG_TARGETS})
 
-	foreach (filename IN LISTS ARG_FILES)
-		list (APPEND files "${ARG_INCLUDE_DIR}/${filename}.hpp" "${ARG_SRC_DIR}/${filename}.cpp")
+
+	foreach (filename IN LISTS ARG_TARGETS)
+
+		if (NOT TARGET ARG_INCLUDE_DIR)
+			add_executable (${filename} "src/${filename}.cpp")
+			# list (APPEND files "include/${filename}.cmake" "src/${filename}.cmake")
+		endif ()
+
 	endforeach ()
 
-	Create_files (FILES ${files} TEXT ${ARG_TEXT})
-	
+	# Create_files (FILES ${files} TEXT ${ARG_TEXT})
+
+
 endmacro ()

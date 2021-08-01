@@ -20,6 +20,8 @@ Create_cmake_files (
 		"Create_files"
 		"Create_cmake_files"
 		"Create_cmake_files"
+		"Create_cpp_executables"
+		"Create_cpp_apps"
 
 	DIR 
 		"cmake_functions"
