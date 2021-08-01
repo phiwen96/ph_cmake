@@ -277,6 +277,10 @@ macro (ph_parse)
     set(N1 )
     set(N  . .. ... args)
 
+	
+	
+
+	# message(${.})
 
     cmake_parse_arguments( ${p}
                             "${N0}"
@@ -285,10 +289,13 @@ macro (ph_parse)
                             ${ARG_N}
     )
 
-        foreach (arg IN LISTS N)
+	
+
+    foreach (arg IN LISTS N)
         if ("${arg}" STREQUAL .)
             # list (APPEND n0 ${${p}_${arg}})
             set (n0 ${${p}_${arg}})
+			# message(${n0})
 
         elseif ("${arg}" STREQUAL ..)
             # list (APPEND n1 ${${p}_${arg}})
@@ -355,6 +362,7 @@ macro (ph_parse)
                     # message("  ${arg} enabled")
                     # cmake_language (CALL ${arg})
                     cmake_language(CALL ${arg})
+					# message(${arg})
                 else()
                     # message("  ${arg} disabled")
                 endif()
@@ -379,10 +387,11 @@ macro (ph_parse)
 
                     if (COMMAND ${arg}...)
                             cmake_language(CALL ${arg}... ${${pp}_${arg}})
-
+							# message("tjoooo")
                     elseif (COMMAND ${arg})
 
                         foreach (a ${${pp}_${arg}})
+							# message("tjoo")
                             cmake_language (CALL ${arg} ${a})
                         endforeach ()
                     endif ()

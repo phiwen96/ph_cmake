@@ -3,7 +3,7 @@ macro (Create_files)
 	set (prefix ARG)
 	set (NoValues DONT_ERASE_MODULE_IF_NOT_DEFINED)
 	set (SingleValues NAME TEXT)
-	set (MultiValues FILES)
+	set (MultiValues FILES PRE_VISITORS POST_VISITORS)
 
 	cmake_parse_arguments (${prefix} "${NoValues}" "${SingleValues}" "${MultiValues}" ${ARGN})
 
@@ -19,8 +19,15 @@ macro (Create_files)
 
 
 	foreach (file IN LISTS ARG_FILES)
+		foreach (visitor IN LISTS ${ARG_POST_VISITORS})
+				cmake_language (CALL ${visitor} FILE ${file})
+		endforeach ()
 		if (NOT EXISTS ${file})
+	
 			file (WRITE ${file} ${ARG_TEXT})
+			foreach (visitor IN LISTS ${ARG_POST_VISITORS})
+				cmake_language (CALL ${visitor} FILE ${file})
+			endforeach ()
 		endif ()	
 	endforeach ()
 

@@ -1,10 +1,45 @@
-macro (Create_cmake_files)
+macro (cmake_files)
 
+
+	macro (FILES f)
+		message(${f})
+	endmacro ()
+
+	macro (DIR d)
+		message("DIR!!")
+	endmacro ()
+	
+
+	macro(hej)
+		message("hej")
+	endmacro(hej)
+	
+
+	macro(fitta_p)
+		message("hej")
+	endmacro()
+
+	macro(hora k)
+		message("${k}")
+		# foreach(i IN LISTS ${ARGN})
+		# 	message("lol  ${i}")
+		# endforeach(i IN LISTS ${ARGN})
+		
+	endmacro(hora)
+	
+
+	ph_parse (. DIR .. kuk ... FILES args ${ARGN})
+
+	return ()
+
+
+	# message("hej")
+	
 	set (prefix ARG)
 	set (NoValues)
 	set (SingleValues DIR)
 	set (MultiValues FILES)
-
+	
 	cmake_parse_arguments (${prefix} "${NoValues}" "${SingleValues}" "${MultiValues}" ${ARGN})
 
 	

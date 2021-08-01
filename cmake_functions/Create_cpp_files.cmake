@@ -3,7 +3,7 @@ macro (Create_cpp_files)
 	set (prefix ARG)
 	set (NoValues)
 	set (SingleValues INCLUDE_DIR SRC_DIR TEXT)
-	set (MultiValues FILES)
+	set (MultiValues FILES VISITORS)
 
 	cmake_parse_arguments (${prefix} "${NoValues}" "${SingleValues}" "${MultiValues}" ${ARGN})
 
@@ -35,6 +35,12 @@ macro (Create_cpp_files)
 		list (APPEND files "${ARG_INCLUDE_DIR}/${filename}.hpp" "${ARG_SRC_DIR}/${filename}.cpp")
 	endforeach ()
 
-	Create_files (FILES ${files} TEXT ${ARG_TEXT})
+	foreach (filename IN LISTS ARG_FOR_EACH_FUNCTIONS)
+		list (APPEND files "${ARG_INCLUDE_DIR}/${filename}.hpp" "${ARG_SRC_DIR}/${filename}.cpp")
+	endforeach ()
+
+	
+
+	Create_files (FILES ${files} TEXT ${ARG_TEXT} VISITORS ${ARG_VISITORS})
 	
 endmacro ()

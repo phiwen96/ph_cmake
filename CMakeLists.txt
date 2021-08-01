@@ -14,14 +14,22 @@ foreach (file ${cmake_functions})
     include (${file})
 endforeach ()
 
-Create_cmake_files (
-
+cmake_files (
+	
 	FILES 
 		"Create_files"
-		"Create_cmake_files"
-		"Create_cmake_files"
+		"cmake_files"
 		"Create_cpp_executables"
 		"Create_cpp_apps"
+		"Create_cpp_tests"
+		"Iterator"
+		"IDE"
+		"cpplibs"
+		"parse"
+		"setup_configurations"
+		"Lambda"
+		"tests"
+
 
 	DIR 
 		"cmake_functions"

@@ -1,4 +1,4 @@
-macro (ph_IDE)
+macro (IDE)
     foreach(file ${HEADER_LIST})
         source_group(TREE include/${self}
             PREFIX "headers"               
