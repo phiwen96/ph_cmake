@@ -41,6 +41,6 @@ macro (Create_cpp_files)
 
 	
 
-	Create_files (FILES ${files} TEXT ${ARG_TEXT} VISITORS ${ARG_VISITORS})
+	Files (FILES ${files} TEXT ${ARG_TEXT} VISITORS ${ARG_VISITORS})
 	
 endmacro ()
