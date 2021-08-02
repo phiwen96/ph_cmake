@@ -8,3 +8,7 @@ if (NOT TARGET Catch2)
 
 	FetchContent_MakeAvailable (Catch2)
 endif ()
+
+macro (Create_cpp_tests)
+	ph_parse ()
+endmacro ()
