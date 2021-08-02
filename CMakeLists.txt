@@ -16,8 +16,29 @@ endforeach ()
 
 cmake_files (
 
-DIR 
+	DIR 
 		"cmake_functions"
+
+	FILES 
+		"Files"
+		"cmake_files"
+		"Create_cpp_executables"
+		"Create_cpp_apps"
+		"Create_cpp_tests"
+		"Iterator"
+		"IDE"
+		"cpplibs"
+		"parse"
+		"setup_configurations"
+		"Lambda"
+		"tests"
+)
+
+cmake_files (
+
+	DIR 
+		"cmake_functions"
+
 	FILES 
 		"Files"
 		"cmake_files"
@@ -36,3 +57,5 @@ DIR
 
 
 
+
+add_subdirectory (tests)
