@@ -15,9 +15,11 @@ foreach (file ${cmake_functions})
 endforeach ()
 
 cmake_files (
-	
+
+DIR 
+		"cmake_functions"
 	FILES 
-		"Create_files"
+		"Files"
 		"cmake_files"
 		"Create_cpp_executables"
 		"Create_cpp_apps"
@@ -29,10 +31,6 @@ cmake_files (
 		"setup_configurations"
 		"Lambda"
 		"tests"
-
-
-	DIR 
-		"cmake_functions"
 )
 
 

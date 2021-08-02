@@ -1,34 +1,24 @@
 macro (cmake_files)
 
+	set (dir "")
 
 	macro (FILES f)
-		message(${f})
+			# message("FILES!!")
+			list (APPEND files "${dir}/${f}.cmake")
+			# message(${f})
 	endmacro ()
 
 	macro (DIR d)
-		message("DIR!!")
+		set (dir ${d})
 	endmacro ()
 	
-
-	macro(hej)
-		message("hej")
-	endmacro(hej)
 	
 
-	macro(fitta_p)
-		message("hej")
-	endmacro()
+	ph_parse (.. DIR ... FILES args ${ARGN})
 
-	macro(hora k)
-		message("${k}")
-		# foreach(i IN LISTS ${ARGN})
-		# 	message("lol  ${i}")
-		# endforeach(i IN LISTS ${ARGN})
-		
-	endmacro(hora)
-	
+	Files (FILES ${files} TEXT ${ARG_TEXT})
 
-	ph_parse (. DIR .. kuk ... FILES args ${ARGN})
+
 
 	return ()
 
