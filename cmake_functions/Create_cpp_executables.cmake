@@ -29,7 +29,7 @@ macro (Create_cpp_executables)
 		set (ARG_TEXT "")
 	endif ()
 
-	Create_files (DIR "/src" FILES ${ARG_TARGETS})
+	Files (DIR "/src" FILES ${ARG_TARGETS})
 
 
 	foreach (filename IN LISTS ARG_TARGETS)
