@@ -14,34 +14,14 @@ foreach (file ${cmake_functions})
     include (${file})
 endforeach ()
 
-cmake_files (
-
-	DIR 
-		"cmake_functions"
-
-	FILES 
-		"Files"
-		"cmake_files"
-		"Create_cpp_executables"
-		"Create_cpp_apps"
-		"Create_cpp_tests"
-		"Iterator"
-		"IDE"
-		"cpplibs"
-		"parse"
-		"setup_configurations"
-		"Lambda"
-		"tests"
-)
-
-cmake_files (
+Create_cmake_files (
 
 	DIR 
 		"cmake_functions"
 
 	FILES 
 		"Create_files"
-		"cmake_files"
+		"Create_cmake_files"
 		"Create_cpp_executables"
 		"Create_cpp_apps"
 		"Create_cpp_tests"
@@ -53,6 +33,26 @@ cmake_files (
 		"Lambda"
 		"tests"
 )
+
+# Create_cmake_files (
+
+# 	DIR 
+# 		"cmake_functions"
+
+# 	FILES 
+# 		"Create_files"
+# 		"cmake_files"
+# 		"Create_cpp_executables"
+# 		"Create_cpp_apps"
+# 		"Create_cpp_tests"
+# 		"Iterator"
+# 		"IDE"
+# 		"cpplibs"
+# 		"parse"
+# 		"setup_configurations"
+# 		"Lambda"
+# 		"tests"
+# )
 
 
 

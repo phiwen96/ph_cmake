@@ -1,4 +1,4 @@
-macro (cmake_files)
+macro (Create_cmake_files)
 
 	set (dir "")
 

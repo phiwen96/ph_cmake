@@ -1,4 +1,4 @@
-macro (Files)
+macro (Create_files)
 
 	set (prefix ARG)
 	set (NoValues DONT_ERASE_MODULE_IF_NOT_DEFINED)
