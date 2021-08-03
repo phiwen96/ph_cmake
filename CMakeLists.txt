@@ -40,7 +40,7 @@ cmake_files (
 		"cmake_functions"
 
 	FILES 
-		"Files"
+		"Create_files"
 		"cmake_files"
 		"Create_cpp_executables"
 		"Create_cpp_apps"
