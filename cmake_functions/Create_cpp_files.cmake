@@ -38,7 +38,7 @@ macro (Create_cpp_files)
 			message("POST_VISITOR ${file}")
 	endmacro ()
 
-	Files (FILES ${files} TEXT ${ARG_TEXT} PRE_VISITORS ${ARG_PRE_VISITORS} pre_visitor POST_VISITORS ${ARG_POST_VISITORS} post_visitor)
+	Create_files (FILES ${files} TEXT ${ARG_TEXT} PRE_VISITORS ${ARG_PRE_VISITORS} pre_visitor POST_VISITORS ${ARG_POST_VISITORS} post_visitor)
 
 
 
