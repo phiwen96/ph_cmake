@@ -30,15 +30,16 @@ macro (Create_cpp_files)
 		set (ARG_TEXT "")
 	endif ()
 
-	macro (pre_visitor file)
-		message("PRE_VISITOR ${file}")
-	endmacro ()
+	# macro (pre_visitor file)
+	# 	message("PRE_VISITOR ${file}")
+	# endmacro ()
 
-	macro (post_visitor file)
-			message("POST_VISITOR ${file}")
-	endmacro ()
+	# macro (post_visitor file)
+	# 		message("POST_VISITOR ${file}")
+	# endmacro ()
 
-	Create_files (FILES ${files} TEXT ${ARG_TEXT} PRE_VISITORS ${ARG_PRE_VISITORS} pre_visitor POST_VISITORS ${ARG_POST_VISITORS} post_visitor)
+	# Create_files (FILES ${files} TEXT ${ARG_TEXT} PRE_VISITORS ${ARG_PRE_VISITORS} pre_visitor POST_VISITORS ${ARG_POST_VISITORS} post_visitor)
+	Create_files (FILES ${files} TEXT ${ARG_TEXT}  ${ARG_POST_VISITORS} post_visitor)
 
 
 

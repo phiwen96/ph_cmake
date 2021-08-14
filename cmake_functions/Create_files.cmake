@@ -19,15 +19,15 @@ macro (Create_files)
 
 
 	foreach (file IN LISTS ARG_FILES)
-		foreach (visitor IN LISTS ${ARG_POST_VISITORS})
-				cmake_language (CALL ${visitor} FILE ${file})
-		endforeach ()
+		# foreach (visitor IN LISTS ${ARG_POST_VISITORS})
+		# 		cmake_language (CALL ${visitor} FILE ${file})
+		# endforeach ()
 		if (NOT EXISTS ${file})
 	
 			file (WRITE ${file} ${ARG_TEXT})
-			foreach (visitor IN LISTS ${ARG_POST_VISITORS})
-				cmake_language (CALL ${visitor} FILE ${file})
-			endforeach ()
+			# foreach (visitor IN LISTS ${ARG_POST_VISITORS})
+			# 	cmake_language (CALL ${visitor} FILE ${file})
+			# endforeach ()
 		endif ()	
 	endforeach ()
 
