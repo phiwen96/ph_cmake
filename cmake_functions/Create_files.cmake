@@ -10,7 +10,7 @@ macro (Create_files)
 	
 
 	if (NOT ARG_FILES)
-		message (FATAL_ERROR "Please give us a FILE.")
+		message (FATAL_ERROR "Please give us a FiILE.")
 	endif ()
 
 	if (NOT ARG_TEXT)
