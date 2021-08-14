@@ -1,6 +1,6 @@
 macro (IDE)
     foreach(file ${HEADER_LIST})
-        source_group(TREE include/${self}
+        source_group(TREE include/${CMAKE_PROJECT_NAME}
             PREFIX "headers"               
             FILES  ${file}
         )
