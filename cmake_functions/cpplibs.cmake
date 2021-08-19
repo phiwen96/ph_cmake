@@ -67,6 +67,7 @@ set (std_pch
 <sstream>
 # <future>
 <atomic>
+<stdio.h>
 
 # <latch>
 # <barrier>
