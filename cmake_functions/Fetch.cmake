@@ -9,7 +9,7 @@ macro (Fetch)
 	cmake_parse_arguments (ARG "${opt}" "${single}" "${mult}" ${ARGN})
 
 	if (NOT ARG_TAG)
-		set (TAG "v0.0.0")
+		set (ARG_TAG "v0.0.0")
 	endif ()
 	
 	if (NOT ARG_REPO)
