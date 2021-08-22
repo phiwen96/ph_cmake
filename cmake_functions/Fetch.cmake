@@ -26,7 +26,7 @@ macro (Fetch)
 		FetchContent_Declare(
   		${target}
   		GIT_REPOSITORY "${ARG_REPO}/${target}.git"
-  		GIT_TAG        "ARG_TAG")
+  		GIT_TAG        "${ARG_TAG}")
 
 		FetchContent_GetProperties (${target})
 	
