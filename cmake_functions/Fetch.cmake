@@ -12,9 +12,15 @@ macro (Fetch)
 		set (ARG_TAG "v0.0.0")
 	endif ()
 	
+	# if (NOT ARG_REPO)
+	# 	set (ARG_REPO "https://github.com/phiwen96")
+	# endif ()
+
 	if (NOT ARG_REPO)
 		set (ARG_REPO "https://github.com/phiwen96")
-	endif ()
+	else()
+		set (ARG_REPO "https://github.com/${ARG_REPO}")
+	endif()
 
 	if (NOT ARG_TARGETS)
 		message (FATAL_MESSAGE "you need to specify targets.")
